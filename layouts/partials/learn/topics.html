@@ -1,0 +1,10 @@
+{{ $optionalTopic := .topic}}
+
+<ul class="p-0">
+    {{ range .module.CurrentSection.Pages }}
+        <li class="list-none {{ if eq $optionalTopic . }} font-bold {{ end }}">
+           <i class="far fa-circle mr-2 text-gray-600"></i>
+           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+    {{ end }}
+</ul>
